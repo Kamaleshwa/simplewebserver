@@ -20,42 +20,26 @@ Testing the webserver
 
 
 ## PROGRAM:
-```
-from http.server import HTTPServer, BaseHTTPRequestHandler
-content = """
 <!DOCTYPE html>
 <html>
 <head>
-<title>My webserver</title>
+ <title>Using Python's SimpleHTTPServer Module</title>
+ <style>
+ #rectangle {
+ height: 50px;
+ width: 100px;
+ background-color: #00f28f;
+ }
+ </style>
 </head>
 <body>
-<h1><u>Languages used iun Web Development</u><h1>
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-<li>Bootstrap</li>
+ <h2>Rectangle served by SimpleHTTPServer</h2>
+ <div id="rectangle"></div>
 </body>
 </html>
-"""
-class myhandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        print("request received")
-        self.send_response(200)
-        self.send_header('content-type', 'text/html; charset=utf-8')
-        self.end_headers()
-        self.wfile.write(content.encode())
-server_address = ('',80)
-httpd = HTTPServer(server_address,myhandler)
-print("my webserver is running...")
-httpd.serve_forever()
-```
-
 
 ## OUTPUT:
-![output](./out1.png)
-![output](./out2.png)
-
+![image](https://github.com/Kamaleshwa/simplewebserver/assets/144980199/1b67897d-f5a1-493a-aeb3-939014e05875)
 
 ## RESULT:
 The program for implementing simple webserver is executed successfully.
